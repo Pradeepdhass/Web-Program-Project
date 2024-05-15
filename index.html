@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact-styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"/>
+<script src="script.js"></script>
+<link rel="icon" href="img/mainlogo.jpg">
+
+    <title>Dhass & Co Recipes</title>
+
+  </head>
+<body>
+
+<!---header Section-->
+    <header>
+        <div class="logo">
+            <img src="img/mainlogo.jpg" alt="Dhass & Co Delocious Rescipes">
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="popular-recipes.html">Recipes</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="feedback.html">FeedBack</a></li>
+            </ul>  
+            <div class="toggle-btn" onclick="logintoggle()">
+              <i class="fas fa-user" id="login"></i>
+          </div>
+        </nav>
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+  
+    <!--hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Dhass & Co Recipes</h1>
+            <p>Discover delicious recipes from around the world and elevate your culinary skills.</p>
+            <a href="popular-recipes.html" class="cta-button">Explore Recipes</a>
+        </div>
+    </section><br>
+    
+    <!--About-Us -->
+    <section class="about-us" id="about-us">
+        <div class="container">
+          <h2>About Us</h2>
+          <p>Welcome to Dhass & Co Recipes, your go-to destination for delicious and mouthwatering dishes! Our mission is to provide you with an exceptional dining experience, whether you're dining in with us or ordering your favorite meals to enjoy at home.</p>
+          <p>At Dhass & Co Recipes, we believe in using only the freshest and highest quality ingredients in our dishes. Our talented chefs are passionate about creating culinary masterpieces that tantalize your taste buds and leave you craving for more.</p>
+          <p>From hearty breakfasts to savory lunches and elegant dinners, we have something to satisfy every Palate. Whether you're a fan of classic comfort foods or adventurous flavors from around the world, you'll find it all at Dhass & Co Recipes.</p>
+          <p>Join us today and embark on a culinary journey like no other. We can't wait to Delight your taste buds!</p>
+        </div>
+
+        
+          <h2>RECIPE CATEGORIES</h2>
+          <div class="category-thumbnails">
+              <div class="recipe-card">
+                  <img src="img/breakfast.jpg" alt="Breakfast" class="category-image">
+                  <h3>Breakfast</h3>
+                  <button class="btn2" onclick="showRecipes1()">Click here</button>
+              </div>
+              <div class="recipe-card">
+                  <img src="img/lunch.png " alt="Lunch" class="category-image">
+                  <h3>Lunch</h3>
+                  <button class="btn2" onclick="showRecipes2()">Click here</button>
+              </div>
+              <div class="recipe-card">
+                  <img src="img/dinner.jpg" alt="Breakfast" class="category-image">
+                  <h3>Dinner</h3>
+                  <button class="btn2" onclick="showRecipes3()">Click here</button>
+              </div>
+          </div>
+     
+      <section class="contact-form" style="margin-top:30px ; font-size:20px;" >
+        <h2>Contact Form</h2>
+        <div class=" form-container">
+            <div class="title">Contact Us</div>
+            <div class="form-content">
+              <form action="" id="myform" method="post">
+                <div class="user-details">
+                  <div class="input-box">
+                    <span class="details">First Name</span>
+                    <input id="first-name1" type="text" placeholder="Enter your name" required>
+                  </div>
+          
+                  <div class="input-box">
+                    <span class="details">Email</span>
+                    <input id="email1" type="text" placeholder="Enter your email" required>
+                  </div>
+          
+                  <div class="input-box">
+                    <span class="details">Phone Number</span>
+                    <input id="phone-number1" type="text" placeholder="Enter your number" required>
+                  </div>
+    
+                  <div class="input-box">
+                    <span class="details">Enquires </span>
+                    <textarea id="enquires" name="address" placeholder="Enter Your Enquires" required></textarea>
+                </div>
+          
+                </div><hr>
+          
+                <div class="form-gender-details">
+                  <input type="radio" name="gender" id="dot-1">
+                  <input type="radio" name="gender" id="dot-2">
+                  <input type="radio" name="gender" id="dot-3">
+                  <span class="details">Gender</span>
+                  <div class="form-category">
+                    <label for="dot-1">
+                      <span class="dot one"></span>
+                      <span class="gender">Male</span>
+                    </label>
+                    <label for="dot-2">
+                      <span class="dot two"></span>
+                      <span class="gender">Female</span>
+                    </label>
+                    <label for="dot-3">
+                      <span class="dot three"></span>
+                      <span class="gender">Prefer not to say</span>
+                    </label>
+                  </div>
+                </div>
+          
+                <div class="form-button">
+                  <input type="button" value="Register" onclick="contactForm()">
+                  <input type="button" value="Clearform"  onclick="clearForm()">
+                </div>
+                
+              </form>
+            </div>
+          </div><br></section>
+      </section>
+    
+      <!--------categories-------->
+
+      
+    <!---Contact Section----->
+   
+      
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Dhass & Co Recipes</h3>
+                <p>Welcome to Dhass & Co Recipes, your go-to destination for delicious and mouthwatering dishes! Our mission is to provide you with an exceptional dining experience, whether you're dining in with us or ordering your favorite meals to enjoy at home.</p>
+            </div>
+            <div class="footer-column">
+              <h3>Quick Links</h3>
+              <ul>
+                  <li><a href="index.html"><i class="fas fa-hand-point-right"></i>Home</a></li>
+                  <li><a href="popular-recipes.html"><i class="fas fa-hand-point-right"></i>Recipes</a></li>
+                  <li><a href="categories.html"><i class="fas fa-hand-point-right"></i>Categories</a></li>
+                  <li><a href="about-us.html"><i class="fas fa-hand-point-right"></i>About Us</a></li>
+                  <li><a href="contact.html"><i class="fas fa-hand-point-right"></i>Contact</a></li>
+                  <li><a href="feedback.html"><i class="fas fa-hand-point-right"></i>FeedBack</a></li>
+              </ul>
+          </div>
+          
+            
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/_._little_boy_pradeep_._/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://github.com/Pradeepdhass"><i class="fab fa-github"></i> Github</a></li>
+                    <li><a href="#"><i class="fab fa-google"></i> Google</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 30/1 , Lakshmi Nagar 2<sup>nd</sup> Street ,Bhavani Main Road ,Erode-638004.</li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:dhass&corecipes@gmail.com">dhass&corecipes@gmail.com</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+91 9362296938">+91 9362296938</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+          <h2>&copy; 2024-Dhass & Co Recipes , All rights reserved. || Designed By PradeepDhass</h2>
+      </div>
+    </footer>
+    <button onclick="goToTop()" id="goToTopBtn" title="Go to top">Top</button>
+    <script>
+    //-------------Contact function -------------//
+    function contactForm() {
+    var firstName = document.getElementById('first-name1').value;
+    var email = document.getElementById('email1').value;
+    var phoneNumber = document.getElementById('phone-number1').value;
+    var enquires = document.getElementById('enquires').value;
+
+    if (firstName === "" || enquires === "" || email === "" ) {
+        alert("All fields must be filled out");
+        return false;
+    }
+
+    firstName = firstName.trim();
+
+    if (firstName.charAt(0) !== firstName.charAt(0).toUpperCase()) {
+        alert("First letter of the first name should be capitalized");
+        return false;
+    }
+
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var domainPattern = /\.(com|edu)$/;
+
+    if (!emailPattern.test(email)) {
+        alert("Invalid email address format. Please enter an email in the format xyz@gmail.com");
+        return false;
+    } else if (!domainPattern.test(email)) {
+        alert("Email address must end with '.com' or '.edu'");
+        return false;
+    }
+
+    if (phoneNumber.length !== 10 || isNaN(phoneNumber)) {
+        alert("Invalid phone number. Please enter a 10-digit number");
+        return false;
+    }
+
+    alert("Thank you for registering!");
+    return true;
+}
+  
+  function clearForm() {
+    var firstName = document.getElementById('first-name1').value;
+    var email = document.getElementById('email1').value;
+    var phoneNumber = document.getElementById('phone-number1').value;
+    var enquires = document.getElementById('enquires').value;
+
+    if (firstName === "" && email === "" && phoneNumber === "" && enquires === "") 
+    {
+        alert("There are no filled input fields to clear.");
+        return false;
+    }
+     else {
+        if (confirm("Are you sure you want to clear the form?")) {
+            document.getElementById('myform').reset();
+            return true;
+        }
+    }
+}
+
+</script> 
+  </body>
+</html>

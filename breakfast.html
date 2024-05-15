@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breakfast Menu</title>
+    <link rel="stylesheet" href="breakfast-style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="icon" href="img/mainlogo.jpg">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/mainlogo.jpg" alt="Dhass & Co Delocious Rescipes">
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="popular-recipes.html">Recipes</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="feedback.html">FeedBack</a></li>
+                
+                <div class="sidebar" id="sidebar">
+                    <h2>My Cart</h2><hr><br>
+                    <p>Total No of Ordered: <span id="clickCount">0</span></p>
+                    <p id="grandTotal">Grand Total: ₹0.00</p>
+                    <button  class="crt-btn" onclick="placeOrder()">Place Order</button>
+                    <button class="crt-btn" onclick="clearCart()">Clear Cart</button>
+                </div>
+            
+
+    <div class="toggle-btn" onclick="toggleSidebar()">
+        <i class="fas fa-shopping-cart"></i>
+    </div>
+            </ul>
+        </nav>
+
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+    <h1 class="menu-list-h1">Break-Fast Menu</h1>
+        <section  class="menu-list">
+
+            <div class="menu-item" id="idli">
+                <img src="img/idli.jpg" alt="Idli">
+                <div class="menu-item-info">
+                    <h2>Idli</h2>
+                    <p>Steamed rice cakes made from fermented rice and lentil batter, often served with coconut chutney and sambar (a lentil-based vegetable stew).</p>
+                    <br><p class="price">RS : ₹ 10 (2 NOS)</p>
+                    <button class="btn2" onclick="addToCart('Idli', 10)">Add To Cart</button>
+                    <button class="btn2" onclick="ingredients('Idli')">Ingredients</button> 
+                </div>
+            </div>
+            
+
+                <div class="menu-item" id="Dosa">
+                    <img src="img/dosa.jpg" alt="Dosa">
+                    <div class="menu-item-info">
+                        <h2>Dosa</h2>
+                        <p> Thin, crispy crepes made from fermented rice and urad dal (black lentils), typically served with various chutneys and sambar.</p>
+                        <br><p class="price">RS : ₹ 40(1 NOS)</p>
+                        <button class="btn2" onclick="addToCart('Dosa',40)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Dosa')">Ingredients</button> 
+                    </div>
+                </div>
+                
+                <div class="menu-item" id="Ven Pongal">
+                    <img src="img/venpongal.jpg" alt="Ven Pongal">
+                    <div class="menu-item-info">
+                        <br><h2>Ven Pongal </h2>
+                        <p>Ven Pongal Also known as "Khara Pongal," this version of the dish is savory and made with rice, moong dal, black pepper, and ginger. </p>
+                        <br><p class="price">RS : ₹ 35 (1 NOS)</p>
+                        <button class="btn2" onclick="addToCart('Ven Pongal',35)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Ven Pongal')">Ingredients</button> 
+                    </div>
+                </div>
+
+                <div class="menu-item" id="Medu Vadai">
+                    <img src="img/meduvadai.jpg" alt="Medu Vadai">
+                    <div class="menu-item-info">
+                        <h2>Medu Vadai</h2>
+                        <p>Medu Vada is a beloved breakfast item in South India and is also enjoyed as a snack or appetizer. Its crispy texture and make it a delightful.</p>
+                        <br><p class="price">RS : ₹ 30 (2 NOS)</p>
+                        <button class="btn2" onclick="addToCart('Medu Vadai',35)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Medu Vadai')">Ingredients</button> 
+                    </div>
+                </div>
+
+                <div class="menu-item" id="Upma">
+                    <img src="img/upma.jpg" alt="Upma">
+                    <div class="menu-item-info">
+                        <br><h2>Upma</h2>
+                        <p>A savory porridge-like dish made from dry roasted semolina (rava) or coarse rice flour, often cooked with vegetables and flavored with spices.</p>
+                        <br><p class="price">RS : ₹ 35 (1 NOS)</p>
+                        <button class="btn2" onclick="addToCart('Upma',35)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Upma')">Ingredients</button> 
+                    </div>
+                </div>
+
+                <div class="menu-item" id="Uttapam">
+                    <img src="img/uttapam.jpg" alt="Uttapam">
+                    <div class="menu-item-info">
+                        <h2>Uttapam</h2>
+                        <p>Thick, savory pancakes made from fermented rice and lentil batter, topped with chopped vegetables like onions, tomatoes .</p>
+                        <br><br><p class="price">RS : ₹ 40 (1 NOS)</p>
+                        <button class="btn2" onclick="addToCart('Uttapam',40)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Uttapam')">Ingredients</button> 
+                    </div>
+                </div>
+
+                <div class="menu-item" id="Appam">
+                    <img src="img/appam.jpg" alt="Appam">
+                    <div class="menu-item-info">
+                        <br><h2>Appam</h2>
+                        <p> Appam, a quintessential South Indian delicacy, boasts a unique texture and flavor profile. Its is fluffy consistency is a result of the fermentation process.</p>
+                        <br><br><p class="price">RS : ₹ 30 (1 NOS)</p>
+                        <button class="btn2" onclick="addToCart('Aappam',40)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Aappam')">Ingredients</button> 
+                    </div>
+                </div>
+
+                <div class="menu-item" id="Idiyappam">
+                    <img src="img/idiyappam.jpg" alt="Idyappam">
+                    <div class="menu-item-info">
+                        <br><h2>Idiyappam</h2>
+                        <p>Idiyappam is a variety of accompaniments, such as coconut milk, spicy curries, or sweetened coconut, depending on regional variations</p>
+                        <br><br><p class="price">RS : ₹ 30 (2 NOS)</p>
+                        <button class="btn2" onclick="addToCart('Idiyappam',30)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Idiyappam')">Ingredients</button> 
+                    </div>
+                </div>
+
+
+        </section>
+        <button class="btn2"><a href="categories.html" class="cta-button">Return </a></button>  
+    
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Dhass & Co Recipes</h3>
+                    <p>Welcome to Dhass & Co Recipes, your go-to destination for delicious and mouthwatering dishes! Our mission is to provide you with an exceptional dining experience, whether you're dining in with us or ordering your favorite meals to enjoy at home.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-hand-point-right"></i>Home</a></li>
+                        <li><a href="popular-recipes.html"><i class="fas fa-hand-point-right"></i>Recipes</a></li>
+                        <li><a href="categories.html"><i class="fas fa-hand-point-right"></i>Categories</a></li>
+                        <li><a href="about-us.html"><i class="fas fa-hand-point-right"></i>About Us</a></li>
+                        <li><a href="contact.html"><i class="fas fa-hand-point-right"></i>Contact</a></li>
+                        <li><a href="feedback.html"><i class="fas fa-hand-point-right"></i>FeedBack</a></li>
+                    </ul>
+                </div>
+              
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="https://www.instagram.com/_._little_boy_pradeep_._/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://github.com/Pradeepdhass"><i class="fab fa-github"></i> Github</a></li>
+                        <li><a href="#"><i class="fab fa-google"></i> Google</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 30/1 , Lakshmi Nagar 2<sup>nd</sup> Street ,Bhavani Main Road ,Erode-638004.</li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:dhass&corecipes@gmail.com">dhass&corecipes@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+91 9362296938">+91 9362296938</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <h2>&copy; 2024-Dhass & Co Recipes , All rights reserved. || Designed By PradeepDhass</h2>
+            </div>
+        </footer>
+    
+        <button onclick="goToTop()" id="goToTopBtn" title="Go to top">Top</button>
+   
+</body>
+</html>

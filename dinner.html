@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinner Menu</title>
+    <link rel="stylesheet" href="breakfast-style.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="icon" href="img/mainlogo.jpg">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/mainlogo.jpg" alt="Das & Co Delocious Rescipes">
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="popular-recipes.html">Recipes</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="feedback.html">FeedBack</a></li>
+                
+                <div class="sidebar" id="sidebar">
+                    <h2>My Cart</h2><hr><br>
+                    <p>Total No of Ordered: <span id="clickCount">0</span></p>
+                    <p id="grandTotal">Grand Total: ₹0.00</p>
+                    <button  class="crt-btn" onclick="placeOrder()">Place Order</button>
+                    <button class="crt-btn" onclick="clearCart()">Clear Cart</button>
+                </div>
+
+    <div class="toggle-btn" onclick="toggleSidebar()">
+        <i class="fas fa-shopping-cart"></i>
+    </div>
+            </ul>
+        </nav>
+
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+    <h1 class="menu-list-h1">Dinner Menu</h1>
+        <section  class="menu-list">
+           
+            
+            <div class="menu-item" id="parrotta">
+                <img src="img/parotta.jpg" alt="parrotta">
+                <div class="menu-item-info">
+                    <h2>Parotta</h2>
+                    <br><p>Parotta is a popular South Indian street food delicacy, especially prevalent in the Tamil Nadu region. It's a flavorful and aromatic dish.</p>
+                    <br><br><br><p class="price"> RS : 30 (2 NOS)</p><br><br>
+                    <button class="btn2" onclick="addToCart('Parotta',30)">Add To Cart</button>
+                    <button class="btn2" onclick="ingredients('Parotta')">Ingredients</button> 
+                </div>
+            </div>
+          
+
+                <div class="menu-item" id="butter-naan">
+                    <img src="img/butter naan.jpg" alt="butter-naan">
+                    <div class="menu-item-info">
+                        <h2>Butter-Naan</h2>
+                        <br><p>Steamed rice cakes made from fermented rice and lentil batter, often served with coconut chutney and sambar with a lentil-based vegetable stew in the rice.</p>
+                       <br> <br><p class="price">RS : ₹ 65 (2 NOS )</p><br><br>
+                        <button class="btn2" onclick="addToCart('Butter-Naan',65)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Butter Naan')">Ingredients</button> 
+                    </div>
+                </div>
+
+                <div class="menu-item" id="kothu poratta">
+                    <img src="img/kothu poratta.jpeg" alt="kothu poratta">
+                    <div class="menu-item-info">
+                        <h2>Kothu Parotta</h2>
+                        <br><p> Curd rice is a delightful dish made from cooked rice mixed with yogurt (curd), often seasoned with mustard seeds, curry leaves, green chilies, and garnished with coriander leaves.</p>
+                        <br><p class="price">RS : ₹ 75 </p><br><br>
+                        <button class="btn2" onclick="addToCart('Kothu Parotta',75)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Kothu Parotta')">Ingredients</button> 
+                    </div>
+                </div>
+
+                <div class="menu-item" id="Pannir-Butter-Masala">
+                    <img src="img/pannir masala.jpeg" alt="Paneer Butter Masala">
+                    <div class="menu-item-info"><br>
+                        <h2>Pannir Butter Masala</h2>
+                       <br> <p> A fragrant and flavorful rice dish layered with aromatic spices, mixed vegetables, and herbs, traditionally prepared with long-grain basmati rice</p>
+                       <br> <br><br><p class="price">RS : ₹ 85 </p><br><br>
+                        <button class="btn2" onclick="addToCart('Pannir Butter Masala',85)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Paneer Butter Masala')">Ingredients</button> 
+                    </div>
+                </div>
+
+                <div class="menu-item" id="chapathi">
+                    <img src="img/chapathi.jpeg " alt="chapathi">
+                    <div class="menu-item-info">
+                        <h2>Chapathi</h2>
+                       <br> <p> A fragrant and flavorful rice dish layered with aromatic spices, mixed vegetables, and herbs, traditionally prepared with long-grain basmati rice</p>
+                        <br><p class="price">RS : ₹ 30 (2 NOS )</p><br><br><br>
+                        <button class="btn2" onclick="addToCart('Chapathi',30)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Chapathi')">Ingredients</button> 
+                    </div>
+                </div>
+
+                <div class="menu-item" id="chiken-manjurian">
+                    <img src="img/chiken-manjurian.jpg" alt="chiken-manjurian">
+                    <div class="menu-item-info">
+                        <h2>Chiken-manjurian</h2>
+                       <br> <p> A fragrant and flavorful rice dish layered with aromatic spices, mixed vegetables, and herbs, traditionally prepared with long-grain basmati rice</p>
+                        <br><p class="price">RS : ₹ 100 </p><br><br><br>
+                        <button class="btn2" onclick="addToCart('Chiken-manjurian',100)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Chiken-manjurian')">Ingredients</button> 
+                    </div>
+                </div>
+
+                <div class="menu-item" id="chiken-chttinadu">
+                    <img src="img/chiken-chttinadu.jpeg" alt="chiken-chttinadu">
+                    <div class="menu-item-info"><br><br>
+                        <h2>Chiken-Chttinadu</h2>
+                       <br> <p> A fragrant and flavorful rice dish layered with aromatic spices, mixed vegetables, and herbs, traditionally prepared with long-grain basmati rice</p>
+                        <br><p class="price">RS : ₹ 100</p><br><br><br>
+                        <button class="btn2" onclick="addToCart('Chiken-Chttinadu',100)">Add To Cart</button>
+                        <button class="btn2" onclick="ingredients('Chiken-Chttinadu')">Ingredients</button> 
+                    </div>
+                </div>
+
+        </section>
+        <button class="btn2" ><a href="categories.html" class="cta-button">Return </a></button> 
+    
+
+        <footer>
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Dhass & Co Recipes</h3>
+                    <p>Welcome to Dhass & Co Recipes, your go-to destination for delicious and mouthwatering dishes! Our mission is to provide you with an exceptional dining experience, whether you're dining in with us or ordering your favorite meals to enjoy at home.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html"><i class="fas fa-hand-point-right"></i>Home</a></li>
+                        <li><a href="popular-recipes.html"><i class="fas fa-hand-point-right"></i>Recipes</a></li>
+                        <li><a href="categories.html"><i class="fas fa-hand-point-right"></i>Categories</a></li>
+                        <li><a href="about-us.html"><i class="fas fa-hand-point-right"></i>About Us</a></li>
+                        <li><a href="contact.html"><i class="fas fa-hand-point-right"></i>Contact</a></li>
+                        <li><a href="feedback.html"><i class="fas fa-hand-point-right"></i>FeedBack</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Follow Us</h3>
+                    <ul>
+                        <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                        <li><a href="https://www.instagram.com/_._little_boy_pradeep_._/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                        <li><a href="https://github.com/Pradeepdhass"><i class="fab fa-github"></i> Github</a></li>
+                        <li><a href="#"><i class="fab fa-google"></i> Google</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> 30/1 , Lakshmi Nagar 2<sup>nd</sup> Street ,Bhavani Main Road ,Erode-638004.</li>
+                        <li><i class="fas fa-envelope"></i> <a href="mailto:dhass&corecipes@gmail.com">dhass&corecipes@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i> <a href="tel:+91 9362296938">+91 9362296938</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <h2>&copy; 2024-Dhass & Co Recipes , All rights reserved. || Designed By PradeepDhass</h2>
+            </div>
+        </footer>
+        
+        <button onclick="goToTop()" id="goToTopBtn" title="Go to top">Top</button>
+</body>
+</html>

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+    <link rel="icon" href="img/mainlogo.jpg">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>Dhass & Co Recipes</title>
+    
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/mainlogo.jpg" alt="Dhass & Co Delocious Rescipes">
+        </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="popular-recipes.html">Recipes</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="feedback.html">FeedBack</a></li>
+
+       <div class="sidebar" id="sidebar">
+        <h2>My Cart</h2><hr><br>
+        <p>Total No of Ordered: <span id="clickCount">0</span></p>
+        <p id="grandTotal">Grand Total: ₹0.00</p>
+        <button  class="crt-btn" onclick="placeOrder()">Place Order</button>
+        <button class="crt-btn" onclick="clearCart()">Clear Cart</button>  
+    </div>
+
+
+    <div class="toggle-btn" onclick="toggleSidebar()">
+        <i class="fas fa-shopping-cart"></i>
+    </div>
+            </ul>
+        </nav>
+
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+ 
+    
+    <section class="popular-recipes">
+        <h2>Popular Recipes</h2>
+        <div class="popular-thumb">
+
+            <div class="recipe-card">
+                <img src="img/idli.jpg" alt="Idli" class="popular-recipes-image">
+                <h3>Idli</h3>
+                <p>Steamed rice cakes made from fermented rice and lentil batter, often served with coconut chutney and sambar (a vegetable stew).</p>
+                <br><br>
+                <p class="price">RS: ₹10 (2 NOS)</p>
+                <button class="btn2" onclick="addToCart('Idli', 10)">Add to Cart</button>
+                <button class="btn2" onclick="ingredients('idli')">Ingredients</button> 
+            </div>
+            
+
+        <div class="recipe-card">
+            <img src="img/dosa.jpg" alt="Dosa" class="popular-recipes-image">
+            <h3>Dosa</h3>
+            <p> Thin, crispy crepes made from fermented rice and urad dal (black lentils), typically served with various chutneys and sambar.</p>
+            <br><p class="price">RS : ₹ 40(1 NOS)</p>
+            <button class="btn2"  onclick="addToCart('Dosa',40)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Dosa')">Ingredients</button> 
+        </div>
+
+        <div class="recipe-card">
+            <img src="img/venpongal.jpg" alt="Ven Pongal" class="popular-recipes-image">
+            <br><br><h3>Ven Pongal </h3>
+            <p>Ven Pongal Also known as "Khara Pongal," this version of the dish is savory and made with rice, moong dal, black pepper, and ginger. </p>
+            <br><p class="price">RS : ₹ 35 (1 NOS)</p>
+            <button class="btn2"  onclick="addToCart('Ven Pongal',35)" id="item3">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Ven Pongal')">Ingredients</button> 
+        </div>
+
+        <div class="recipe-card">
+            <img src="img/meduvadai.jpg" alt="Medu Vadai" class="popular-recipes-image">
+            <h3>Medu Vadai</h3>
+            <p>Medu Vada is a beloved breakfast item in South India and is also enjoyed as a snack or appetizer. Its crispy texture and make it a delightful.</p>
+            <br><p class="price">RS : ₹ 30 (2 NOS)</p>
+            <button class="btn2"  onclick="addToCart('Medu Vadai',35)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Medu Vadai')">Ingredients</button> 
+        </div>
+
+        <div class="recipe-card">
+            <img src="img/upma.jpg" alt="Upma" class="popular-recipes-image">
+            <h3>Upma</h3>
+            <p>A savory porridge-like dish made from dry roasted semolina (rava) or coarse rice flour, often cooked with vegetables and flavored with spices.</p>
+            <br><p class="price">RS : ₹ 35 (1 NOS)</p>
+            <button class="btn2"  onclick="addToCart('Upma',35)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Upma')">Ingredients</button> 
+        </div>
+
+        <div class="recipe-card">
+            <img src="img/uttapam.jpg" alt="uttapam" class="popular-recipes-image">
+            <h3>Uttapam</h3>
+            <p>Thick, savory pancakes made from fermented rice and lentil batter, topped with chopped vegetables like onions, tomatoes .</p>
+            <br> <br><p class="price">RS : ₹ 40 (1 NOS)</p>
+            <button class="btn2"  onclick="addToCart('Uttapam',40)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Uttapam')">Ingredients</button> 
+        </div>
+
+        <div class="recipe-card">
+            <img src="img/appam.jpg" alt="Appam" class="popular-recipes-image">
+            <h3>Aappam</h3>
+            <br><p> Aappam, a quintessential South Indian delicacy, boasts a unique texture and flavor profile. Its is fluffy consistency is a result of the fermentation process.</p>
+            <br><p class="price">RS : ₹ 40 (1 NOS)</p>
+            <button class="btn2"  onclick="addToCart('Aappam',40)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Aappam')">Ingredients</button> 
+        </div>
+       
+        <div class="recipe-card">
+            <img src="img/idiyappam.jpg" alt="Idyappam" class="popular-recipes-image">
+            <h3>Idiyappam</h3>
+            <p>Idiyappam is a variety of accompaniments, such as coconut milk, spicy curries, or sweetened coconut, depending on regional variations</p>
+            <br><br><p class="price">RS : ₹ 30 (1 NOS)</p>
+            <button class="btn2"  onclick="addToCart('Idiyappam',30)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Idiyappam')">Ingredients</button> 
+        </div>
+
+        <div class="recipe-card">
+            <img src="img/fullmeals.jpg" alt="full-meals" class="popular-recipes-image">
+            <h3>Full-Meals</h3>
+            <p>A complete meal comprising a variety of dishes, including fragrant basmati rice cooked with vegetables, accompanied by flavorful side dishes, and providing a dining.</p>
+            <br><p class="price">RS : ₹ 30 (2 NOS)</p>
+            <button class="btn2"  onclick="addToCart('Full-Meals',30)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Full-Meals')">Ingredients</button> 
+        </div>
+
+
+        <div class="recipe-card">
+            <img src="img/sambarrice.JPG" alt="Sambarsadham" class="popular-recipes-image">
+            <br><h3>Sambhar Rice</h3><br>
+            <p>Steamed rice cakes made from fermented rice and lentil batter, often served with coconut chutney and sambar with a lentil-based vegetable stew in the rice .</p>
+            <br> <br> <p class="price">Rs : ₹ 80 </p>
+           <button class="btn2"   onclick="addToCart('Sambar Rice',80)">Add to Cart </button>
+           <button class="btn2" onclick="ingredients('Sambar Rice')">Ingredients</button> 
+        </div>
+        <div class="recipe-card">
+            <img src="img/curdrice.jpg" alt="Curd Rice" class="popular-recipes-image">
+            <h3>Curd Rice</h3>
+            <p> Curd rice is a delightful dish made from cooked rice mixed with yogurt (curd), often seasoned with mustard seeds, curry leaves, green chilies, and garnished with coriander .</p>
+            <br><p class="price">Rs : ₹ 35  </p>
+            <button class="btn2"   onclick="addToCart('Curd Rice',35)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Curd Rice')">Ingredients</button> 
+        </div>
+        <div class="recipe-card">
+            <img src="img/vegbiriyani.jpg" alt="Vegbiriyani" class="popular-recipes-image">
+            <h3>Vegetable Biryani</h3>
+            <p> A fragrant and flavorful rice dish layered with aromatic spices, mixed vegetables, and herbs, traditionally prepared with long-grain basmati rice.</p>
+            <br><br><p class="price">Rs : ₹ 60</p>
+           <button class="btn2"   onclick="addToCart('Vegetable Biryani',60)">Add to Cart </button>
+           <button class="btn2" onclick="ingredients('Vegetable Biryani')">Ingredients</button> 
+        </div>
+
+        <div class="recipe-card">
+            <img src="img/parotta.jpg" alt="parrotta" class="popular-recipes-image">
+            <h3>Parotta</h3>
+            <p>Parotta is a popular South Indian street food delicacy, especially prevalent in the Tamil Nadu region. It's a flavorful and aromatic dish.</p>
+            <br>  <br><br><p class="price"> RS : 30 (2 NOS)</p>
+            <button class="btn2"   onclick="addToCart('Parotta',30)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Parotta')">Ingredients</button> 
+        </div>
+        <div class="recipe-card">
+            <img src="img/butter naan.jpg" alt="butter-naan" class="popular-recipes-image">
+            <h3>Butter-Naan</h3>
+            <p>Butter naan, with its soft, pillowy texture and rich, buttery flavor, is a beloved staple of Indian cuisine. Made from a simple dough of flour.</p>
+            <br> <br><p class="price">RS : ₹ 65 (2 NOS )</p>
+            <button class="btn2"   onclick="addToCart('Butter-Naan',65)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Butter Naan')">Ingredients</button> 
+        </div>
+        <div class="recipe-card">
+            <img src="img/kothu poratta.jpeg" alt="kothu poratta" class="popular-recipes-image">
+            <h3>Kothu Parotta</h3>
+            <p> Kothu Parotta is a popular South Indian street food delicacy, especially prevalent in the Tamil Nadu region. It's a flavorful and aromatic dish made from shredded parotta.</p>
+            <br><p class="price">RS : ₹ 75 </p>
+            <button class="btn2"   onclick="addToCart('Kothu Parotta',75)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Kothu Parotta')">Ingredients</button> 
+        </div>
+
+        <div class="recipe-card">
+            <img src="img/pannir masala.jpeg" alt="Pannir-Butter-Masala" class="popular-recipes-image">
+            <h3>Pannir Butter Masala</h3>
+            <p> Pannir Butter Masala, a delightful dish hailing from the vibrant tapestry of Indian cuisine, embodies a harmonious blend of rich flavors and textures. Tender cubes of paneer, a fresh Indian cheese, are enveloped in a luscious, creamy tomato-based gravy.</p>
+            <br><br><p class="price">RS : ₹ 85 </p>
+            <button class="btn2"   onclick="addToCart('Pannir Butter Masala',85)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Paneer Butter Masala')">Ingredients</button> 
+        </div>
+
+        <div class="recipe-card">
+            <img src="img/chapathi.jpeg " alt="chapathi" class="popular-recipes-image">
+            <h3>Chapathi</h3>
+            <p>Chapathi, a staple of Indian cuisine, embodies simplicity and versatility. Made from whole wheat flour, water, and a pinch of salt, this unleavened flatbread is a canvas for culinary creativity. Its preparation is an art form, requiring skillful kneading and rolling to achieve.</p>
+            <br><br><p class="price">RS : ₹ 30 (2 NOS )</p>
+            <button class="btn2"   onclick="addToCart('Chapathi',30)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Chapathi')">Ingredients</button> 
+        </div>
+
+        <div class="recipe-card">
+            <img src="img/chiken-manjurian.jpg" alt="chiken-manjurian" class="popular-recipes-image">
+            <h3>Chiken-manjurian</h3>
+            <p> Chicken Manchurian is a delectable fusion dish that tantalizes the taste buds with its bold flavors and succulent textures. Tender pieces of chicken are marinated in a harmonious blend of soy sauce, ginger, garlic, and other aromatic spices, infusing them with depth and character.</p>
+            <br><br><p class="price">RS : ₹ 100 </p>
+            <button class="btn2"   onclick="addToCart('Chiken-manjurian',100)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Chiken-manjurian')">Ingredients</button> 
+        </div>
+        
+        <div class="recipe-card">
+            <img src="img/chiken-chttinadu.jpeg" alt="chiken-chttinadu" class="popular-recipes-image">
+            <br><br><h3>Chiken-Chttinadu</h3>
+            <p>Chicken Chettinad is a culinary masterpiece hailing from the southern region of India, specifically the Chettinad district in Tamil Nadu. This aromatic dish is a celebration of robust spices and rich flavors that dance tantalizingly on the taste buds.</p>
+            <br><br><p class="price">RS : ₹ 100 </p>
+            <button class="btn2"   onclick="addToCart('Chiken-Chttinadu',100)">Add to Cart </button>
+            <button class="btn2" onclick="ingredients('Chiken-Chttinadu')">Ingredients</button> 
+        </div>
+    
+</div>
+        <button class="btn2"><a href="index.html" class="cta-button">Return to home</a></button>  
+    </section>
+    <footer>
+        <div class="footer-content">
+            <div class="footer-column">
+                <h3>Dhass & Co Recipes</h3>
+                <p>Welcome to Dhass & Co Recipes, your go-to destination for delicious and mouthwatering dishes! Our mission is to provide you with an exceptional dining experience, whether you're dining in with us or ordering your favorite meals to enjoy at home.</p>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fas fa-hand-point-right"></i>Home</a></li>
+                    <li><a href="popular-recipes.html"><i class="fas fa-hand-point-right"></i>Recipes</a></li>
+                    <li><a href="categories.html"><i class="fas fa-hand-point-right"></i>Categories</a></li>
+                    <li><a href="about-us.html"><i class="fas fa-hand-point-right"></i>About Us</a></li>
+                    <li><a href="contact.html"><i class="fas fa-hand-point-right"></i>Contact</a></li>
+                    <li><a href="feedback.html"><i class="fas fa-hand-point-right"></i>FeedBack</a></li>
+                </ul>
+            </div>
+          
+            
+            <div class="footer-column">
+                <h3>Follow Us</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="https://www.instagram.com/_._little_boy_pradeep_._/"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="https://github.com/Pradeepdhass"><i class="fab fa-github"></i> Github</a></li>
+                    <li><a href="#"><i class="fab fa-google"></i> Google</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul>
+                    <li><i class="fas fa-map-marker-alt"></i> 30/1 , Lakshmi Nagar 2<sup>nd</sup> Street ,Bhavani Main Road ,Erode-638004.</li>
+                    <li><i class="fas fa-envelope"></i> <a href="mailto:dhass&corecipes@gmail.com">dhass&corecipes@gmail.com</a></li>
+                    <li><i class="fas fa-phone"></i> <a href="tel:+91 9362296938">+91 9362296938</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <h2>&copy; 2024-Dhass & Co Recipes , All rights reserved. || Designed By PradeepDhass</h2>
+        </div>
+    </footer>
+
+    <button onclick="goToTop()" id="goToTopBtn" title="Go to top">Top</button>
+</body>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Dhass & Co Recipes</title>
+  <link rel="stylesheet" href="login.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="icon" href="img/mainlogo.jpg">
+</head>
+<body>
+  <div class="container">
+    <a href="index.html" class="return-home"><i class="fas fa-arrow-left"></i></a><br>
+    <div class="toggle-container">
+      <input type="checkbox" id="toggle" class="hidden">
+      <label for="toggle" class="toggle">
+        <div class="slide"></div>
+         <span class="label">Login</span>
+         <span class="label">Sign Up</span>
+      </label>
+    </div>
+    
+    <div class="form-container">
+      <form action="" id="login-form">
+          <label for="login-email">Email</label><br>
+          <input type="email" id="login-email" class="email"><br><br>
+          <label for="login-password">Password</label><br>
+          <input type="password" id="login-password" class="password"><br><br>
+          <input type="button" value="Login" onclick="validateLoginForm()">
+      </form>
+  
+      <form action="" id="signup-form" class="hidden">
+          <label for="signup-username">User Name</label><br>
+          <input type="text" id="signup-username" class="Name"><br><br>
+          <label for="signup-email">Email</label><br>
+          <input type="email" id="signup-email" class="email"><br><br>
+          <label for="signup-password">Set Password</label><br>
+          <input type="password" id="signup-password" class="password"><br><br>
+          <input type="button" value="Sign-up" onclick="validateSignupForm()">
+      </form>
+  </div>
+  
+  </div>
+
+  <script src="login.js"></script>
+</body>
+</html>

@@ -1,0 +1,159 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: #f5f5f5;
+    color: #000000;
+}
+
+
+.container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #ff1d1d;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: #ff7070 0px 2px 20px 0px;
+}
+
+.return-home {
+    display: inline-block;
+    color: #ff0000; 
+    font-size: 24px;
+    text-decoration: none; 
+    margin-bottom: 10px; 
+  margin-right: 240px;
+}
+
+.return-home:hover {
+    color: #b30000;
+}
+
+.toggle-container{
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.toggle{
+    display:flex;
+    align-items: center;
+    cursor: pointer;
+    border: 2px solid #ff1d1d;
+}
+
+.slide{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    background:  #ff1d1d;
+    border-radius: 25px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.label{
+    flex: 1;
+    text-align: center;
+    color: #112a46;
+    font-weight: bold;
+    z-index: 9;
+}
+
+#toggle{
+    display: none;
+}
+
+#toggle:checked+.toggle .slide{
+    transform:translateX(100%);
+}
+
+label{
+    width: 250px;
+    height: 50px;
+    border-radius: 25px;
+}
+
+.hidden{
+    display: none;
+}
+
+.form-container{
+    width: 100%;
+    overflow: hidden;
+}
+
+input{
+    width: 95%;
+    padding: 5px 3px;
+    font-size: 15px;
+    margin: 5px 0px;
+}
+
+input:focus{
+    border: 1px solid #ff1d1d;
+    outline: 1px solid #ff6060;
+}
+
+input[type="button"] {
+    width: 90%;
+    padding: 9px;
+    margin: 20px 0px 10px 15px;
+    background: #ff1d1d;
+    border: none;
+    font-size: 16px;
+    font-weight: medium;
+    cursor: pointer;
+    border-radius: 25px;
+    transition: all 0.3s; 
+    outline: none; 
+    box-shadow: 0px 4px 0px  #6b0029ee;
+
+}
+
+input[type="button"]:hover {
+    background-color: #ff0000; 
+    transform: scale(1.05);
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+}
+
+input[type="button"]:active {
+    transform: scale(0.95); 
+    box-shadow: none; 
+}
+
+@media only screen and (max-width: 600px) {
+    .container {
+      width: 50%;
+      padding: 20px;
+    }
+    
+    .return-home {
+        margin-right: 240px;
+    }
+  
+    .toggle-container {
+      margin-bottom: 10px;
+    }
+  
+    .label {
+      font-size: 16px;
+    }
+  
+    .form-container {
+      width: 100%;
+      overflow: hidden;
+    }
+  
+    input[type="button"] {
+      width: 90%;
+      margin: 20px 10px 10px 10px;
+     
+    }
+  }
+  

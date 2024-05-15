@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dhass & Co Recipes Feedback</title>
+    <link rel="icon" href="img/mainlogo.jpg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="feedback.css">
+    <link rel="stylesheet" href="style.css">
+<script src="feedback.js"></script>
+
+</head>
+<body>
+
+    <body class="feedback-bg">
+        <header>
+          <div class="logo">
+            <img src="img/mainlogo.jpg" alt="Das & Co Delocious Rescipes">
+        </div>
+            <input type="checkbox" id="nav_check" hidden>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="popular-recipes.html">Recipes</a></li>
+                    <li><a href="categories.html">Categories</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            
+            <label for="nav_check" class="hamburger">
+                <div></div>
+                <div></div>
+                <div></div>
+            </label>
+        </header>    
+      
+<div class=" form-container">
+    <a href="index.html" class="return-home"><i class="fas fa-arrow-left"></i></a>
+    <div class="title">FeedBack Form</div>
+    <div class="form-content">
+      <form action="" id="myform" method="post">
+        <div class="user-details">
+
+          <div class="input-box">
+            <span class="details">Name : </span>
+            <input id="first-name" type="text" placeholder="Enter your name" required>
+          </div>
+  
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input id="email" type="text" placeholder="Enter your email" required>
+          </div>
+  
+          <div class="input-box">
+            <span class="details">Feedback :</span>
+            <textarea id="feedback" name="feedback" rows="4" required></textarea>
+          </div>
+
+        <div class="form-button">
+          <input type="button" value="Submit" onclick="validateForm()">
+          <input type="button" value="Clearform"  onclick="clearForm()">
+        </div>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

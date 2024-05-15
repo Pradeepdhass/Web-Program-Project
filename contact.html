@@ -1,0 +1,261 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="contact-styles.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <link rel="icon" href="img/mainlogo.jpg">
+    <title>Recipe Sharing </title>
+    
+  <link rel="icon" href="img/mainlogo.jpg">
+  <script>
+    function validateForm() {
+    var firstName = document.getElementById('first-name').value;
+    var lastName = document.getElementById('last-name').value;
+    var email = document.getElementById('email').value; 
+    var phoneNumber = document.getElementById('phone-number').value;
+    var password = document.getElementById('password').value;
+    var confirmPassword = document.getElementById('confirm-password').value;
+    var age = document.getElementById('age').value;
+    var address = document.getElementById('address').value;
+    if (firstName == "" || lastName == "" || password == "" || confirmPassword == "" || address =="" ) {
+        alert("All fields must be filled out");
+        return false;
+    }
+
+    // Remove leading and trailing spaces from first and last names
+    firstName = firstName.trim();
+    lastName = lastName.trim();
+
+    // Check if the first letter of the first name is capitalized
+    if (firstName.charAt(0) !== firstName.charAt(0).toUpperCase()) {
+        alert("First letter of the first name should be capitalized");
+        return false;
+    }
+
+    // Check if the first letter of the last name is lowercase
+    else if (lastName.charAt(0) !== lastName.charAt(0).toLowerCase()) {
+        alert("First letter of the last name should be lowercase");
+        return false;
+    }
+
+   
+  // Checking if the password has at least 6 characters and at least one special character
+  if (password.length < 6 || !/[!@#$%^&*]/.test(password)) {
+    alert("Password must have at least 6 characters and at least one special character (!@#$%^&*)");
+    return false;
+}
+    // Checking if the password matches the confirmPassword
+    else if (password != confirmPassword) {
+        alert("Passwords do not match");
+        return false;
+    }
+
+    // Checking if the email is in the format of xyz@gmail.com
+    var emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    var domainPattern = /\.(com|edu)$/;
+
+    if (!emailPattern.test(email)) {
+        alert("Invalid email address format. Please enter an email in the format xyz@gmail.com");
+        return false;
+    } else if (!domainPattern.test(email)) {
+        alert("Email address must end with '.com' or '.edu'");
+        return false;
+    }
+
+    // Checking if the phone number contains 10 digits
+    if (phoneNumber.length !== 10 || isNaN(phoneNumber)) {
+        alert("Invalid phone number. Please enter a 10-digit number");
+        return false;
+    }
+
+    // Checking the Age is greater than or Not 
+    if (age >= 110) {
+        alert("Age must be below 110");
+        return false;
+    }
+
+    alert("Thank you for registering!");
+    document.getElementById('myforms').reset();
+    return true;
+}
+
+
+function clearForm() {
+  var firstName = document.getElementById('first-name').value;
+  var lastName = document.getElementById('last-name').value;
+  var email = document.getElementById('email').value; 
+  var phoneNumber = document.getElementById('phone-number').value;
+  var password = document.getElementById('password').value;
+  var confirmPassword = document.getElementById('confirm-password').value;
+  var age = document.getElementById('age').value;
+  var address = document.getElementById('address').value;
+  
+
+  if (firstName == "" && lastName == "" && password == "" && confirmPassword == "" && address =="" ) 
+  {
+      alert("There are no filled input fields to clear.");
+      return false;
+  }
+   else {
+      if (confirm("Are you sure you want to clear the form?")) {
+          document.getElementById('myforms').reset();
+          return true;
+      }
+  }
+}
+
+</script>
+</head>
+<body class="contact-bg">
+    <header>
+      <div class="logo">
+        <img src="img/mainlogo.jpg" alt="Das & Co Delocious Rescipes">
+    </div>
+        <input type="checkbox" id="nav_check" hidden>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="popular-recipes.html">Recipes</a></li>
+                <li><a href="categories.html">Categories</a></li>
+                <li><a href="about-us.html">About Us</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="feedback.html">FeedBack</a></li>
+            </ul>
+        </nav>
+        
+        <label for="nav_check" class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </label>
+    </header>
+
+    
+<div class=" form-container">
+  <a href="index.html" class="return-home"><i class="fas fa-arrow-left"></i></a>
+    <div class="title">Contact Us </div>
+    <div class="form-content">
+      <form action="" id="myforms" method="post">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">First Name</span>
+            <input id="first-name" type="text" placeholder="Enter your name" required>
+          </div>
+  
+          <div class="input-box">
+            <span class="details">Last Name</span>
+            <input id="last-name" type="text" placeholder="Enter your name" required>
+          </div>
+  
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input id="email" type="text" placeholder="Enter your email" required>
+          </div>
+  
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input id="phone-number" type="text" placeholder="Enter your number" required>
+          </div>
+  
+          <div class="input-box">
+            <span class="details">Age</span>
+            <input  id="age" type="number" placeholder="Enter your age" min="10"  required>
+          </div>
+  
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input id="password" type="password" placeholder="Enter your password" required>
+          </div>
+  
+          <div class="input-box">
+            <span class="details">Confirm Password</span>
+            <input id="confirm-password" type="password" placeholder="Confirm your password" required>
+          </div>
+  
+          <div class="input-box">
+            <span class="details">Address:</span>
+            <textarea id="address" name="address" placeholder="Enter Your Address" required></textarea>
+        </div>
+  
+        </div><hr>
+  
+        <div class="form-gender-details">
+          <input type="radio" name="gender" id="dot-1">
+          <input type="radio" name="gender" id="dot-2">
+          <input type="radio" name="gender" id="dot-3">
+          <span class="details">Gender</span>
+          <div class="form-category">
+            <label for="dot-1">
+              <span class="dot one" id="gender"></span>
+              <span class="gender">Male</span>
+            </label>
+            <label for="dot-2">
+              <span class="dot two" id="gender"></span>
+              <span class="gender">Female</span>
+            </label>
+            <label for="dot-3">
+              <span class="dot three" id="gender"></span>
+              <span class="gender">Prefer not to say</span>
+            </label>
+          </div>
+        </div>
+  
+        <div class="form-button">
+          <input type="button" value="Register" onclick="validateForm()">
+          <input type="button" value="Clearform"  onclick="clearForm()">
+        </div>
+        
+      </form>
+    </div>
+  </div>
+  
+  <br>  
+  <footer>
+    <div class="footer-content">
+        <div class="footer-column">
+            <h3>Dhass & Co Recipes</h3>
+            <p>Welcome to Dhass & Co Recipes, your go-to destination for delicious and mouthwatering dishes! Our mission is to provide you with an exceptional dining experience, whether you're dining in with us or ordering your favorite meals to enjoy at home.</p>
+        </div>
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+              <li><a href="index.html"><i class="fas fa-hand-point-right"></i>Home</a></li>
+              <li><a href="popular-recipes.html"><i class="fas fa-hand-point-right"></i>Recipes</a></li>
+              <li><a href="categories.html"><i class="fas fa-hand-point-right"></i>Categories</a></li>
+              <li><a href="about-us.html"><i class="fas fa-hand-point-right"></i>About Us</a></li>
+              <li><a href="contact.html"><i class="fas fa-hand-point-right"></i>Contact</a></li>
+              <li><a href="feedback.html"><i class="fas fa-hand-point-right"></i>FeedBack</a></li>
+          </ul>
+      </div>
+
+        <div class="footer-column">
+            <h3>Follow Us</h3>
+            <ul>
+                <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                <li><a href="https://github.com/Pradeepdhass"><i class="fab fa-github"></i> Github</a></li>
+                <li><a href="#"><i class="fab fa-google"></i> Google</a></li>
+            </ul>
+        </div>
+        <div class="footer-column">
+            <h3>Contact Us</h3>
+            <ul>
+                <li><i class="fas fa-map-marker-alt"></i> 30/1 , Lakshmi Nagar 2<sup>nd</sup> Street ,Bhavani Main Road ,Erode-638004.</li>
+                <li><i class="fas fa-envelope"></i> <a href="mailto:dhass&corecipes@gmail.com">dhass&corecipes@gmail.com</a></li>
+                <li><i class="fas fa-phone"></i> <a href="tel:+91 9362296938">+91 9362296938</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="footer-copyright">
+      <h2>&copy; 2024-Dhass & Co Recipes , All rights reserved. || Designed By PradeepDhass</h2>
+  </div>
+</footer>
+
+  
+</body>
+</html>
